@@ -31,9 +31,19 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      # Clone the repo
       - name: Checkout
         uses: actions/checkout@v4
-        
+
+      # Installs pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          # Prevent automatic installation of dependencies at this stage
+          run_install: false 
+
+      # Install nodejs
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -42,17 +52,9 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: './ai-feedback/pnpm-lock.yaml'
           
-      # Installs pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: false
-
-     
       # Uses pnpm to install dependencies
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
       
       # Uses pnpm to run build
       - name: Build

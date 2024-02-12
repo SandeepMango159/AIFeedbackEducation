@@ -55,7 +55,13 @@ jobs:
       # Navigate to ai-feedback folder before continuing next steps
       - name: Navigate to project directory
         run: cd ai-feedback
-        
+
+      # Show contents of folder
+      - name: Debug directory contents
+        run: |
+          pwd
+          ls -la
+          
       # Uses pnpm to install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

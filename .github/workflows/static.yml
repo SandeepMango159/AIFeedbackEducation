@@ -29,21 +29,38 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
-          cache-dependency-path: './ai-feedback/package-lock.json'
+          # Uese pnpm package manager
+          cache: 'pnpm'
+          cache-dependency-path: './ai-feedback/pnpm-lock.yaml'
+          
+      # Installs pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: false
+
+     
+      # Uses pnpm to install dependencies
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
+      
+      # Uses pnpm to run build
       - name: Build
-        run: npm run build
+        run: pnpm run build
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

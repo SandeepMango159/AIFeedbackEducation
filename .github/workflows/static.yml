@@ -51,23 +51,15 @@ jobs:
           # Uese pnpm package manager
           cache: 'pnpm'
           cache-dependency-path: './ai-feedback/pnpm-lock.yaml'
-
-      # Navigate to ai-feedback folder before continuing next steps
-      - name: Navigate to project directory
-        run: cd ai-feedback
-
-      # Show contents of folder
-      - name: Debug directory contents
-        run: |
-          pwd
-          ls -la
           
       # Uses pnpm to install dependencies
       - name: Install dependencies
+        working-directory: './ai-feedback'
         run: pnpm install --frozen-lockfile
-      
+        
       # Uses pnpm to run build
       - name: Build
+        working-directory: './ai-feedback'
         run: pnpm run build
       
       - name: Setup Pages
@@ -78,7 +70,8 @@ jobs:
         with:
           # Upload dist repository
           # This is relative path to inside 'ai-feedback' folder
-          path: './dist'
+          path: './ai-feedback/dist'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

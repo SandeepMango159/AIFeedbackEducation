@@ -1,68 +1,762 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* TODO Zorgen dat de img goed gesized wordt in Chrome want font is groter daar, 20px ipv standaard 16px, anders verschuift die niet goed, maar komt gewoon misschien door auto top en bottom margin wss van de picture of h1 element... Ah nee dan is de img naast de nav maar dan er boven en dan er weer onder soms, mja fixen dus... ooit...
+ Yea da komt door de 5rem die ik daar zet, hm ja ni echt ez te fixen... */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Alle colours
+    blauw: #348FFF
+    header en footer #282A39;
+    rest: #232533
+*/
+
+
+* {
+	color: white;
+	font-family: Roboto, sans-serif;
+	font-size: 1.1rem;
+
+	/* SCrollbar voor firefox */
+	scrollbar-color: #348FFF #282A39;
+	scrollbar-width: thin;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+
+
+
+/* +++++++++++++++++++++++++++++++ Scrollbar */
+
+/* Voor Chrome enz, webkit browsers, horizontal en vertical */
+/* Is de scrollbar achtergrond */
+::-webkit-scrollbar-track {
+	background-color: #282A39 ;
 }
 
+/* Heel de scrollbar */
+::-webkit-scrollbar {
+
+	width: 7px;
+}
+
+/* De scrollbar draggable handle */
+::-webkit-scrollbar-thumb {
+	background-color: #348FFF;
+}
+
+/* Voor Chrome enz, webkit browsers, speicifiek horizontal */
+::-webkit-scrollbar-track:horizontal {
+	background-color: transparent;
+
+}
+
+/* All page CSS */
+
+/* ++++++++++++++++++++++++++++++++ Body */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	background-color: #232533;
+	/* Lineair backgrounds zijn ni zo handig, zien er ni zo goed uit tbh...*/
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+/* Deze voegt een achtergrond afbeelding toe aan body, mooi parallax */
+/* Past echt goed bij de form */
+/* Deze ID is al bij de vorm dus moet niet nog eensbody erachter zetten */
+#UserRegisterPic {
+	/* Deze img is 500kb, gebruik kleinere*/
+	background: url(../images/soccer_grass_v1.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* 2de coverBackground */
+#MatchRegisterPic {
+	/* Deze img is 500kb, gebruik kleinere*/
+	/*background: url(../images/garden_of_words.jpg) no-repeat center center fixed;*/
+	background: url(../images/soccer_field_day_1920x1080.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* 2de coverBackground */
+#TrainingRegisterPic {
+	/* Deze img is 500kb, gebruik kleinere*/
+	/*background: url(../images/garden_of_words.jpg) no-repeat center center fixed;*/
+	background: url(../images/soccer_field_night_1920x1080.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+
+/* Alleen de footer op de pagina's met coverBackgroundPics */
+#UserRegisterPic footer, #MatchRegisterPic footer, #TrainingRegisterPic footer {
+	box-shadow: 0px -7px 15px 10px rgba(0,0,0,0.66);
+}
+
+#registerPic header, #MatchRegisterPic header, #TrainingRegisterPic header {
+	box-shadow: 0px 7px 15px 10px rgba(0,0,0,0.66);
+}
+
+#MatchRegisterPic form {
+	background: rgba(0, 0, 0, 0.85);
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++ Header */
+
+header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	/*  */
+	background-color: #282A39;
+	margin-bottom: 2rem;
+	/*  */
+	/* border: 5px double;
+    border-radius: 0.5em; */
+
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	/* border: 5px double;
+    border-radius: 0.5em; */
+
+	/*  Wrm weer display table???*/
+	display: table;
+
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h1 picture {
+	margin: auto;
+	display: table-cell;
+	vertical-align: middle;
+	/*  */
+	/* border: 2px dashed;
+    border-radius: 0.5em; */
+
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+img {
+
+	display: block;
+	margin: auto;
+	max-width: 255px;
+	width: 100%;
+	/*  */
+	/* border: 1px solid;
+    border-radius: 0.5em; */
+}
+/*
+nav {
+    border: 1px dashed;
+    border-radius: 0.5em;
+} */
+
+/* ++++++++++++++++++++++++++++++++ Navigation */
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 0;
+	/*  */
+	list-style-type: none;
+	/*  */
+	/* border: 5px double;
+    border-radius: 0.5em; */
+}
+
+nav ul li {
+	margin: 0.3rem 1rem;
+	/* Nodig om li namen te centreren en ni van rechts te beginnen */
+	text-align: center;
+	/* Flex is om te groeien, dan breidt die de li uit */
+	flex: 1;
+	/* Min width want ja anders waren die blokke ni groot genoeg */
+	min-width: 7.5rem;
+	/* Voeg transparante border toe zodat als je hovert de rest niet eronder wordt weg geduwd als je dit niet had... Nu verandert enkel de kleur das goed */
+	border-bottom: 3px solid transparent;
+	/* transities voor hover */
+	transition-property: border;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Focus-within is voor als huidige of child focus */
+nav ul li:hover, nav ul li:focus-within {
+	border-bottom: 3px solid #348FFF;
+}
+
+nav ul li a {
+	text-decoration: none;
+	display: block;
+	padding: 0.5rem;
+}
+
+nav ul li a:focus {
+	outline: none;
+	/* border-top: dashed;
+    border-left: dashed;
+    border-right: dashed; */
+	text-decoration: none;
+	display: block;
+	padding: 0.5rem;
+}
+
+/* Wil de current li en a de kleur blauw */
+.current {
+	color: #348FFF;
+	/* border-bottom: 3px solid #348FFF; */
+}
+
+/* Wil de current li nog blauw onderstreept */
+li.current {
+	border-bottom: 3px solid #348FFF;
+
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Main  */
+
+
+
+main {
+	margin: 0.5rem 0.5rem 5rem 0.5rem;
+}
+
+
+main p {
+	margin: 0 auto;
+}
+
+main a {
+	transition-property: color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	border-bottom: 3px solid transparent;
+
+}
+
+
+/* ++++++++++++ Main Table */
+
+table#coolBackground {
+	background: rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.8) ;
+
+	padding: 2rem;
+
+}
+
+/* Hell yes eindelijk geen gekleurde horizontale scrollbar in Firefox, niet voor Chrome */
+#tableOverflow {
+	overflow-x: scroll;
+	scrollbar-color: #348FFF transparent;
+	scrollbar-width: thin;
+}
+
+main table {
+	border-collapse: separate;
+	border-spacing: 0rem 0.3rem;
+	margin-bottom: 3rem;
+	/* table-layout: fixed; */
+
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	-o-transition:all 1s ease;
+	transition:all 1s ease;
+
+}
+
+main table th:nth-child(1) {
+	width: 10rem;
+}
+
+main table th:nth-child(2) {
+	width: 20rem;
+}
+
+main table th:nth-child(3) {
+	width: 8rem;
+	/* Eigenlijk heb ik max-width niet nodig, in tables werkt de width op een rare manier man... min width ook ni */
+	/* max-width: 12rem; */
+}
+
+main table th:last-child {
+	width: 9rem;
+	/* Eigenlijk heb ik max-width niet nodig, in tables werkt de width op een rare manier man... min width ook ni */
+	/* max-width: 12rem; */
+}
+
+main table td {
+	text-align: center;
+	border-top: 0.2rem solid #282A39 ;
+
+}
+
+main table td:last-child {
+	/* Dan wrappen de icoontjes niet maar blijven zo naast elkaar horizontaal,
+    anders wrapten ze en kwamen ze onder elkaar als zoomed in en dan ja te hoge cellen */
+	white-space: nowrap;
+}
+
+main table td img {
+	object-fit: cover;
+	height: 100%;
+	width: 3rem;
+	/* padding: 0rem 0.5rem; */
+	/* padding-bottom: 0.1rem; */
+	border-bottom-left-radius: 0.2rem;
+	border-bottom-right-radius: 0.2rem ;
+	padding: 0.5rem;
+}
+
+main table td img:hover, main table td a:focus img {
+	/* linear-gradient(0deg, rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%), */
+	background: linear-gradient(0deg, rgba(255,0,0,8) 60%, rgba(0,0,0,0) 95%);
+	background-size: 1.8rem 2.1rem;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: 69%;
+}
+
+main table td img.editButton:hover, main table td a:focus img.editButton {
+	background: linear-gradient(0deg, rgba(52, 143, 255, 0.8) 60%, rgba(0,0,0,0) 95%);
+	/* background: linear-gradient(0deg, rgba(0, 255, 0, 0.8) 60%, rgba(0,0,0,0) 95%); */
+	background-size: 2rem 2.1rem;
+	background-repeat: no-repeat;
+	background-position-x: 40%;
+	background-position-y: 60%;
+
+}
+
+main table tbody tr:nth-child(odd) {
+	/* background-color: #282A39; */
+}
+
+
+
+
+/* ++++++++++++++++++++++++++++++++ URL links */
+
+
+/* Voor nav en alle links */
+a:hover, a:focus {
+	color: #348FFF;
+}
+
+/* Voor de links in de main */
+main a:hover, main a:focus {
+	/* Zodat de onderlijning(=text decoration) verdwijnt en er een blauwe streep onderkomt */
+	/* En dus niet een blauwe streep ook bij de nav links */
+	text-decoration: none;
+	border-bottom: 3px solid  #348FFF;
+
+}
+
+
+table td a {
+	display: inline-block;
+}
+
+table td a:hover, table td a:focus {
+	/* Zodat geen onderlijning voor de pictogrammen in de table die dienen als links */
+	color: transparent;
+	border-bottom: 3px solid transparent;
+}
+
+
+/* ++++++++++++++++++++++++++++++++ Main tekst */
+
+
+h2 {
+	font-size: 3rem;
+	text-align: center;
+	font-weight: 400;
+	/* Geen margin-botom zetten want default 0.89em ziet er mooi uit met de forms enz, als je margin bottom wil ga dan naar
+    main > h2:nth-child(n+2), dus elke h2 die direct een child is van de main en pas vanaf de 2de h2 */
+}
+
+
+/* ++++++++++++++++++++++++++++++++ Forms */
+
+
+form {
+	margin: 0 0.1rem;
+
+	background: rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.8) ;
+
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+#foutboodschap, #foutboodschapHard {
+	text-align: left;
+	margin: auto auto 1rem auto;
+	/* background: radial-gradient(circle, rgba(255,0,0,0.5) 20%, rgba(0,0,0, 0.0) 100%); */
+	background: linear-gradient(90deg, rgba(255,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+
+	border-bottom-left-radius: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	-o-transition:all 1s ease;
+	transition:all 1s ease;
+}
+
+.clientSideFormError
+{
+	text-align: left;
+	/* background: radial-gradient(circle, rgba(255,0,0,0.5) 20%, rgba(0,0,0, 0.0) 100%); */
+	background: linear-gradient(90deg, rgba(255,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+
+	border-bottom-left-radius: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	-webkit-transition:all 1s ease;
+	-moz-transition:all 1s ease;
+	-o-transition:all 1s ease;
+	transition:all 1s ease;
+}
+
+#foutboodschapHard {
+	/* Door table blijft die mooi in het midden... kon echt ff niks anders vinden man, anders de main in een flex zetten ma dit is echt raar... Ksnap ni wrm die ni wilt centeren met margin 0 auto */
+	display: table;
+	/* transition-property: padding;
+    transition-duration: 1sec;
+    transition-timing-function: ease; */
+}
+
+#foutboodschap ul, #foutboodschapHard ul {
+	list-style-type: disc;
+	padding-left: 1rem;
+}
+
+#foutboodschap li, #foutboodschapHard li {
+	margin: 0.5rem;
+}
+
+#foutboodschap li::marker, #foutboodschapHard li::marker {
+	color: #348FFF;
+}
+
+form p {
+	margin: 0;
+}
+
+form p span {
+	display: block;
+	margin-bottom: 1.5rem;
+}
+form p span.custom-span-title {
+	display: block;
+	margin: 0 0 0 0rem;
+}
+
+label {
+	display: block;
+}
+
+label.has-error {
+	background: linear-gradient(90deg, rgba(255,0,0,0.4) 0%, rgba(0,0,0,0.1) 90%);
+	padding: 0.1rem 0.4rem;
+	border-radius: 0.1rem;
+}
+
+/* Zorgt ervoor dat de parent div rond de select evengroot wordt als de select, zodat position relative tegoei werkt */
+.custom-select {
+	border: 3px solid transparent;
+	width: 11rem;
+	height: 1.8rem;
+	margin-top: 0.5rem;
+	margin-bottom: 1.5rem;
+	/* Zit nog een beetje van de linkerkant niet aligned dus fix TO DO */
+	margin-left: 0;
+	position: relative;
+}
+
+select {
+	background: #232533;
+	border: 3px solid transparent;
+
+	width: 11rem;
+	padding-right: 2rem ;
+
+	height: 1.8rem;
+
+	/* Margin top is tov de div custom-select */
+	margin-top: 0.5rem;
+	/*  Deze margin bottom werkt ni want staat al bij custom div... */
+	margin-bottom: 1.5rem;
+	transition-property: border;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+select:focus, select:hover {
+	outline: none;
+	border-bottom: 3px solid #348FFF;
+}
+
+/* Verandert de pijlbox ook als er op de select wordt gefocust */
+/* Dus als select focus dan kies de custom arrow die er direct na komt*/
+/*----------- Laat dit ff werkt ni 100% tegoei*/
+/*select:focus + .custom-arrow, select:hover + .custom-arrow {*/
+/*    outline: none;*/
+/*    border-bottom: 3px solid #348FFF;*/
+/*}*/
+
+/* Is de achtergrondkleur en vakje waarin dat de pijl komt  */
+.custom-arrow {
+	display: block;
+	background-color: #282A39;
+	/*border-bottom: 3px solid transparent;*/
+
+	width: 2rem;
+	/*height: 1.65rem;*/
+	height: 100%;
+
+	position: absolute;
+	/* top: 0; */
+	top: 0.5rem;
+	right: 0;
+
+	pointer-events: none;
+	transition-property: border;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+
+}
+
+/* Maakt de effectieve pijl */
+.custom-arrow::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 0.5rem solid transparent;
+	border-right: 0.5rem solid transparent;
+	border-top: 0.6rem solid #348FFF;
+
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+input {
+	margin-bottom: 1.5rem;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 3px solid #282A39;
+	width: 95%;
+
+	transition-property: all;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+input:focus {
+	outline: none;
+	border-bottom: 3px solid #348FFF;
+}
+
+/* Kiest enkel de inputs met submit, dus de submit knopjes */
+input[type="submit"] {
+	margin-top: 1.5rem;
+	padding: 0.1rem;
+	border-bottom-left-radius: 0.75rem;
+	border-bottom-right-radius: 0.75rem;
+}
+
+input[type="submit"]:hover {
+	border-bottom: 3px solid #348FFF;
+	color: #348FFF
+
+}
+
+.strength-meter {
+	position: relative;
+	height: 2rem;
+	width: 90%;
+	border: 3px solid #282A39;
+	border-radius: 1rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.strength-meter::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: calc(1% * var(--strength, 0));
+	/*width: 20%;*/
+	background-color: #348FFF;
+	transition: width 200ms;
+}
+
+.reasons {
+	margin-bottom: 1.5rem;
+}
+
+.reasons > * {
+	margin-top: 0.5rem;
+	position: center;
+	margin-left: 2.5rem;
+
+}
+
+
+/* ++++++++++++++++++++++++++++++++ Footer */
+
+
+footer {
+	text-align: center;
+	background-color: #282A39;
+	margin-top: auto;
+}
+
+#horizontalrule {
+	margin-top: 2rem;
+	width: 80%;
+}
+
+input.invalid
+{
+	border-bottom-color:rgba(255,0,0,0.4)  ;
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+
+	main table {
+		margin: auto;
+		margin-bottom: 6rem;
+		width: 90%;
+		/* Borders */
+		border-collapse: separate;
+		border-spacing: 0.0rem 0.3rem;
+
+	}
+
+	/* #foutboodschapHard { */
+	/* Laat deze, da werkt gewoon ni zoooo goed... */
+	/* margin-left: max(1.8rem, auto); */
+	/* } */
+
+
+	/* Is enkel voor de appearance, denk later over na */
+	/* Border rond een rij dus alternatief voor main table tr  */
+
+	/* main table td {
+        border-top: 0.4rem solid #282A39 ;
+        border-bottom: solid black;
+    }
+
+    main table td:first-child {
+        border-left: solid black;
+    }
+
+    main table td:last-child {
+        border-right: solid  black;
+    } */
+
+
+
+
+}
+
+@media  screen and (min-width: 900px) {
+	#foutboodschap {
+		padding: 0rem 10rem 0rem 0rem;
+	}
+
+	#foutboodschapHard {
+		padding: 0rem 3rem;
+	}
+
+	main table {
+		line-height: 2rem;
+	}
+
+
+
+}
+
+@media screen and (min-width: 1150px) {
+	/* Maak het logo groter */
+	header img {
+		max-width: 350px;
+	}
+
+	main p {
+		/*  5rem van linkerkant en rechterkant */
+		margin: 0 5rem 0 5rem;
+		line-height: 1.5rem;
+	}
+
+
+
+	/* elke h2 die direct een child is van de main en werd preceded door een p
+    Nah ga naar main > h2:nth-child(n+2)*/
+	/* main > p ~ h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+    } */
+
+	/* Selecteert elke h2 dat een directe child is van de main, vanaf de 2de h2   */
+	/* Is ongeveer zelfde als main > p ~ h2, maar geeft beter garantie voor de h2 want hoeft niet per se na een p te zijn*/
+	/*Using a formula (an + b). Description: a represents a cycle size, n is a counter (starts at 0), and b is an offset value.*/
+	main > h2:nth-child(n+2) {
+		margin-bottom: 1.5rem;
+		margin-top: 2.8rem;
+	}
+
+
+	/* Moet deze erbij anders neemt die p de margin over van main p en gebeurt ff iets gek */
+	form p {
+		margin: 0;
+	}
+
+	form  label {
+		margin: 0rem 0rem 0rem 0rem;
+	}
+
+	main form {
+		margin: 0 5rem;
+
+	}
+
+
+
+}
+
+@media screen and (min-width: 1375px) {
+	header h1 {
+		/* Plaats het logo 5rem van de linkerkant */
+		margin: auto auto auto 5rem;
+		vertical-align: middle;
+	}
+
+	nav {
+		/* Navigatie 5rem van rechterkant af.... oke */
+		margin: 0 5rem 0 auto;
+
+	}
+
+
+
 }

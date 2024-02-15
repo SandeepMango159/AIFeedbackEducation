@@ -5,25 +5,33 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StudentdashboardPage from "./pages/StudentdashboardPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import StudentdashboardAssignmentPage from "./pages/StudentdashboardAssignmentPage";
+import Layout from "./components/Layout";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
 	[
 		{
 			path: "/",
-			element: <HomePage></HomePage>,
+			element: <Layout></Layout>,
 			errorElement: <NotFoundPage></NotFoundPage>,
-		},
-		{
-			path: "/studentdashboard",
-			element: <StudentdashboardPage></StudentdashboardPage>,
 			children: [
 				{
-					path: "/studentdashboard/assignment/:assignmentId",
-					element: <StudentdashboardAssignmentPage></StudentdashboardAssignmentPage>,
+					path: "/",
+					element: <HomePage></HomePage>,
+					errorElement: <NotFoundPage></NotFoundPage>,
+				},
+				{
+					path: "/studentdashboard",
+					element: <StudentdashboardPage></StudentdashboardPage>,
+					children: [
+						{
+							path: "/studentdashboard/assignment/:assignmentId",
+							element: <StudentdashboardAssignmentPage></StudentdashboardAssignmentPage>,
+						},
+					]
 				},
 			]
-		},
+		}
 	],
 	{
 		basename: "/AIFeedbackEducation",

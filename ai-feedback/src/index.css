@@ -132,7 +132,10 @@ h1 {
     border-radius: 0.5em; */
 
 	/*  Wrm weer display table???*/
-	display: table;
+	/* display: table; */
+
+	display: block;
+	text-align: center;
 
 }
 

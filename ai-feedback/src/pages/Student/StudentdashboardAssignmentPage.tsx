@@ -13,6 +13,7 @@ export default function StudentdashboardAssignmentPage() {
         <>
         <h1>Assignment Page</h1>
         <p>You clicked to see assignment {params.assignmentId} in detail</p>
+        
         </>
     )
 

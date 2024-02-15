@@ -2,10 +2,13 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import StudentdashboardPage from "./pages/StudentdashboardPage";
+import StudentdashboardPage from "./pages/Student/StudentdashboardPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import StudentdashboardAssignmentPage from "./pages/StudentdashboardAssignmentPage";
+import StudentdashboardAssignmentPage from "./pages/Student/StudentdashboardAssignmentPage";
 import Layout from "./components/Layout";
+import TeacherdashboardPage from "./pages/Teacher/TeacherdashboardPage";
+import TeacherAssignmentsViewPage from "./pages/Teacher/TeacherAssignmentsViewPage";
+import TeacherAssignmentsCreatePage from "./pages/Teacher/TeacherAssignmentsCreatePage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -21,6 +24,18 @@ const router = createBrowserRouter(
 					errorElement: <NotFoundPage></NotFoundPage>,
 				},
 				{
+					path: "/teacherdashboard",
+					element: <TeacherdashboardPage></TeacherdashboardPage>,
+				},
+				{
+					path: "/teacherdashboard/assignments-view",
+					element: <TeacherAssignmentsViewPage></TeacherAssignmentsViewPage>,
+				},
+				{
+					path: "/teacherdashboard/assignments-create",
+					element: <TeacherAssignmentsCreatePage></TeacherAssignmentsCreatePage>,
+				},
+				{
 					path: "/studentdashboard",
 					element: <StudentdashboardPage></StudentdashboardPage>,
 					children: [
@@ -34,7 +49,7 @@ const router = createBrowserRouter(
 		}
 	],
 	{
-		basename: "/AIFeedbackEducation",
+		basename: "/AIFeedbackEducation/",
 	},
 );
 

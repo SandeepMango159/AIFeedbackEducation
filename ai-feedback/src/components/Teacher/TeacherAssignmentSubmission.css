@@ -1,0 +1,30 @@
+.submission-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.submission-card h2 {
+    margin-top: 0;
+}
+
+.submission-info {
+    margin-bottom: 10px;
+}
+
+.submission-info-field {
+    margin-bottom: 5px;
+}
+
+.submission-info > div {
+    margin-bottom: 5px;
+}
+
+.field-label {
+    font-weight: bold;
+}
+
+.field-value {
+    margin-left: 5px;
+}

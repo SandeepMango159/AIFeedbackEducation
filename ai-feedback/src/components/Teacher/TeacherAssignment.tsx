@@ -28,7 +28,10 @@ export default function TeacherAssignment({nr}: Props) {
                     </div>
                 </div>
                 <div className="assignment-buttons">
-                    <a href="#" className="button check-submissions">Check Submissions</a>
+                    <Link
+                    to={`/teacherdashboard/assignments-submissions/${nr}`} className="button check-submissions">
+                        Check Submissions
+                    </Link>
                     <Link 
                         to={"/teacherdashboard/assignments-form"}
                         className="button edit-delete">

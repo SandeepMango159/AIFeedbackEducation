@@ -9,6 +9,7 @@ import Layout from "./components/Layout";
 import TeacherdashboardPage from "./pages/Teacher/TeacherdashboardPage";
 import TeacherAssignmentsViewPage from "./pages/Teacher/TeacherAssignmentsViewPage";
 import TeacherAssignmentsFormPage from "./pages/Teacher/TeacherAssignmentsFormPage";
+import TeacherAssignmentsSubmissionsPage from "./pages/Teacher/TeacherAssignmentsSubmissionsPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -34,6 +35,10 @@ const router = createBrowserRouter(
 				{
 					path: "/teacherdashboard/assignments-form",
 					element: <TeacherAssignmentsFormPage></TeacherAssignmentsFormPage>,
+				},
+				{
+					path: "/teacherdashboard/assignments-submissions/:assignmentId",
+					element: <TeacherAssignmentsSubmissionsPage></TeacherAssignmentsSubmissionsPage>
 				},
 				{
 					path: "/studentdashboard",

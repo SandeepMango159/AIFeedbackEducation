@@ -10,6 +10,7 @@ import TeacherdashboardPage from "./pages/Teacher/TeacherdashboardPage";
 import TeacherAssignmentsViewPage from "./pages/Teacher/TeacherAssignmentsViewPage";
 import TeacherAssignmentsFormPage from "./pages/Teacher/TeacherAssignmentsFormPage";
 import TeacherAssignmentsSubmissionsPage from "./pages/Teacher/TeacherAssignmentsSubmissionsPage";
+import TeacherStudentAssignmentChatMonitoringPage from "./pages/Teacher/TeacherStudentAssignmentChatMonitoringPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -38,7 +39,11 @@ const router = createBrowserRouter(
 				},
 				{
 					path: "/teacherdashboard/assignments-submissions/:assignmentId",
-					element: <TeacherAssignmentsSubmissionsPage></TeacherAssignmentsSubmissionsPage>
+					element: <TeacherAssignmentsSubmissionsPage></TeacherAssignmentsSubmissionsPage>,
+				},
+				{
+					path: "/teacherdashboard/assignments-submissions/:assignmentId/view-conversation",
+					element: <TeacherStudentAssignmentChatMonitoringPage></TeacherStudentAssignmentChatMonitoringPage>
 				},
 				{
 					path: "/studentdashboard",

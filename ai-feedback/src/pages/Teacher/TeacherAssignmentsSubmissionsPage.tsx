@@ -46,9 +46,6 @@ export default function TeacherAssignmentsSubmissionsPage( ) {
         {submissions.map((submission, index) => (
                 <TeacherAssignmentSubmission key={index} {...submission} ></    TeacherAssignmentSubmission>
         ))}
-        
-
-
 
 
     </>

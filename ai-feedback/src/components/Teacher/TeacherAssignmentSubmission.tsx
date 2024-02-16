@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TeacherAssignmentSubmissionProps from "../props/TeacherAssignmentSubmissionProps";
 
 import "./TeacherAssignmentSubmission.css"
@@ -37,6 +38,11 @@ export default function TeacherAssignmentSubmission(
                     <p className="field-value">Description: The amount of times the user has submitted</p>
                 </div>
             </div>
+            <Link 
+                // zonder "/" voor de path dan gaat die naar deze link relatief tov de huidige, ok 
+                to={"view-conversation"}>
+                View Conversation
+            </Link>
         </div>
 
     </>

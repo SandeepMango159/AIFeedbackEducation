@@ -1,3 +1,10 @@
+interface FormValues {
+    dueDate: Date;
+    submissionLimit: number;
+    description: string;
+}
+
+
 
 export default function TeacherAssignmentForm() {
 
@@ -5,10 +12,13 @@ export default function TeacherAssignmentForm() {
         // const nrSubmissions = formData.get("submissionLimit");
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const submissionLimit = formData.get("submissionLimit");
-        alert(`You created an assignment with a submission limmit of 2 ${submissionLimit}`);
-
-
+        const formValues: FormValues = {
+            dueDate: new Date(formData.get("dueDate") as string),
+            submissionLimit: parseInt(formData.get("submissionLimit") as string, 10),
+            description: formData.get("description") as string
+        };
+        console.log(formValues);
+        alert(`You created an assignment with \n ${formValues.dueDate} \n ${formValues.submissionLimit} \n ${formValues.description}`);
     }
 
     return (

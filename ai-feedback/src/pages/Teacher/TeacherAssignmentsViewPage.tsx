@@ -23,7 +23,7 @@ export default function TeacherAssignmentsViewPage() {
                 >Create Assignment
             </button>
         </Link>
-        
+
         <div className="assignment-container">       
             <TeacherAssignment nr={1}></TeacherAssignment>
             <TeacherAssignment nr={2}></TeacherAssignment>

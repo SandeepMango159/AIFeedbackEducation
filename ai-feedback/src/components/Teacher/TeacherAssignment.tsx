@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./TeacherAssignment.css";
 
 interface Props {
@@ -28,7 +29,11 @@ export default function TeacherAssignment({nr}: Props) {
                 </div>
                 <div className="assignment-buttons">
                     <a href="#" className="button check-submissions">Check Submissions</a>
-                    <a href="#" className="button edit-delete">Edit/Delete</a>
+                    <Link 
+                        to={"/teacherdashboard/assignments-form"}
+                        className="button edit-delete">
+                        Edit/Delete
+                    </Link>
                 </div>
         </div>
     )

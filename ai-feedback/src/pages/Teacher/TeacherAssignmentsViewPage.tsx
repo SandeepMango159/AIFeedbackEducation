@@ -1,5 +1,6 @@
 // import { useParams } from "react-router-dom"
 
+import { Link } from "react-router-dom";
 import TeacherAssignment from "../../components/Teacher/TeacherAssignment";
 
 export default function TeacherAssignmentsViewPage() {
@@ -8,7 +9,9 @@ export default function TeacherAssignmentsViewPage() {
         
         <>
         <h1>Teacher Assignment Page</h1>
-        <button 
+        <Link 
+                to={"/teacherdashboard/assignments-form"}>
+                <button 
             className="create-assignment-button"
             style={{
                 padding: "8px 16 px",
@@ -17,7 +20,10 @@ export default function TeacherAssignmentsViewPage() {
                 textDecoration: "none",
                 borderRadius: "5px"
             }}
-                >Create Assignment</button>
+                >Create Assignment
+            </button>
+        </Link>
+        
         <div className="assignment-container">       
             <TeacherAssignment nr={1}></TeacherAssignment>
             <TeacherAssignment nr={2}></TeacherAssignment>

@@ -8,7 +8,7 @@ import StudentdashboardAssignmentPage from "./pages/Student/StudentdashboardAssi
 import Layout from "./components/Layout";
 import TeacherdashboardPage from "./pages/Teacher/TeacherdashboardPage";
 import TeacherAssignmentsViewPage from "./pages/Teacher/TeacherAssignmentsViewPage";
-import TeacherAssignmentsCreatePage from "./pages/Teacher/TeacherAssignmentsCreatePage";
+import TeacherAssignmentsFormPage from "./pages/Teacher/TeacherAssignmentsFormPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -32,8 +32,8 @@ const router = createBrowserRouter(
 					element: <TeacherAssignmentsViewPage></TeacherAssignmentsViewPage>,
 				},
 				{
-					path: "/teacherdashboard/assignments-create",
-					element: <TeacherAssignmentsCreatePage></TeacherAssignmentsCreatePage>,
+					path: "/teacherdashboard/assignments-form",
+					element: <TeacherAssignmentsFormPage></TeacherAssignmentsFormPage>,
 				},
 				{
 					path: "/studentdashboard",

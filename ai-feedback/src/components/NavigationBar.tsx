@@ -33,15 +33,6 @@ export default function NavigationBar() {
                         </NavLink>
 					</li>
 					<li>
-						<NavLink
-                        to={"/assignments"}
-						className={({ isActive }) => {
-							return isActive ? 'current' : '';
-						}}>
-                            Assignments
-                        </NavLink>
-					</li>
-					<li>
 						<NavLink 
                         to={"/help"}
 						className={({ isActive }) => {

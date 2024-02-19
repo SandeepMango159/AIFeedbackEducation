@@ -18,6 +18,12 @@ export default function AdmindashboardPage() {
                 AI Tools
             </Link>
         </div>
+        <div>
+            <Link
+                to={"/admindashboard/analytics"}>
+                View Analytics
+            </Link>
+        </div>
         
         </>
         

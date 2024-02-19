@@ -18,6 +18,7 @@ import SettingsPage from "./pages/Settings";
 import AdmindashboardPage from "./pages/Admin/AdmindashboardPage";
 import AdminAssignmentsViewPage from "./pages/Admin/AdminAssignmentsViewPage";
 import AdminAIToolsPage from "./pages/Admin/AdminAIToolsPage";
+import AdminAnalyticsPage from "./pages/Admin/AdminAnalyticsPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -87,6 +88,10 @@ const router = createBrowserRouter(
 				{
 					path: "/admindashboard/ai-tools",
 					element: <AdminAIToolsPage></AdminAIToolsPage>
+				},
+				{
+					path: "/admindashboard/analytics",
+					element: <AdminAnalyticsPage></AdminAnalyticsPage>
 				},
 			]
 		}

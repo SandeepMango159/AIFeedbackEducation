@@ -35,6 +35,13 @@ export default function TeacherAssignmentForm() {
                     <input type="number" id="submissionLimit" name="submissionLimit" min="1" required/>
                 </div>
                 <div className="form-group">
+                    <label htmlFor="AITypes">Choose your AI: select:</label>
+                    <select id="AITypes" name="AITypes">
+                        <option value="AI 1">AI 1</option>
+                        <option value="AI 2">AI 2</option>
+                        </select>
+                </div>
+                <div className="form-group">
                     <label htmlFor="description">Description/Instructions:</label>
                     <textarea id="description" name="description" required></textarea>
                 </div>

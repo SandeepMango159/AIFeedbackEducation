@@ -11,6 +11,7 @@ import TeacherAssignmentsViewPage from "./pages/Teacher/TeacherAssignmentsViewPa
 import TeacherAssignmentsFormPage from "./pages/Teacher/TeacherAssignmentsFormPage";
 import TeacherAssignmentsSubmissionsPage from "./pages/Teacher/TeacherAssignmentsSubmissionsPage";
 import TeacherStudentAssignmentChatMonitoringPage from "./pages/Teacher/TeacherStudentAssignmentChatMonitoringPage";
+import TeacherAnalyticsPage from "./pages/Teacher/TeacherAnalyticsPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -44,6 +45,10 @@ const router = createBrowserRouter(
 				{
 					path: "/teacherdashboard/assignments-submissions/:assignmentId/view-conversation",
 					element: <TeacherStudentAssignmentChatMonitoringPage></TeacherStudentAssignmentChatMonitoringPage>
+				},
+				{
+					path: "/teacherdashboard/analytics",
+					element: <TeacherAnalyticsPage></TeacherAnalyticsPage>
 				},
 				{
 					path: "/studentdashboard",

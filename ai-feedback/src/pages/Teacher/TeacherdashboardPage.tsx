@@ -7,10 +7,18 @@ export default function TeacherdashboardPage() {
     return (
 		<>
 			<h1>Teacher Dashboard Page</h1>
-            <Link 
-                to={"/teacherdashboard/assignments-view"}>
-                View Assignments
-            </Link>
+            <div>
+                <Link
+                    to={"/teacherdashboard/assignments-view"}>
+                    View Assignments
+                </Link>
+            </div>
+            <div>
+                <Link
+                    to={"/teacherdashboard/analytics"}>
+                    View Analytics
+                </Link>
+            </div>
 		</>
 	);
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import StudentAssignment, { StudentAssignmentProps } from "../../components/Student/StudentAssignment";
 
 export default function StudentdashboardPage() {
@@ -37,7 +38,12 @@ export default function StudentdashboardPage() {
 		))}
         </div>
 
-     
+		<div>
+                <Link
+                    to={"/studentdashboard/analytics"}>
+                    View Analytics
+                </Link>
+            </div>
 		</>
 	);
 }

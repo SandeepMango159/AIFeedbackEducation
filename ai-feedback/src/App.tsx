@@ -4,7 +4,6 @@ import HomePage from "./pages/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StudentdashboardPage from "./pages/Student/StudentdashboardPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import StudentdashboardAssignmentPage from "./pages/Student/StudentdashboardAssignmentPage";
 import Layout from "./components/Layout";
 import TeacherdashboardPage from "./pages/Teacher/TeacherdashboardPage";
 import TeacherAssignmentsViewPage from "./pages/Teacher/TeacherAssignmentsViewPage";
@@ -12,6 +11,7 @@ import TeacherAssignmentsFormPage from "./pages/Teacher/TeacherAssignmentsFormPa
 import TeacherAssignmentsSubmissionsPage from "./pages/Teacher/TeacherAssignmentsSubmissionsPage";
 import TeacherStudentAssignmentChatMonitoringPage from "./pages/Teacher/TeacherStudentAssignmentChatMonitoringPage";
 import TeacherAnalyticsPage from "./pages/Teacher/TeacherAnalyticsPage";
+import StudentAssigntmentViewPage from "./pages/Student/StudentAssigntmentViewPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -53,12 +53,10 @@ const router = createBrowserRouter(
 				{
 					path: "/studentdashboard",
 					element: <StudentdashboardPage></StudentdashboardPage>,
-					children: [
-						{
-							path: "/studentdashboard/assignment/:assignmentId",
-							element: <StudentdashboardAssignmentPage></StudentdashboardAssignmentPage>,
-						},
-					]
+				},
+				{
+					path: "/studentdashboard/assignments-submissions/:assignmentId",
+					element: <StudentAssigntmentViewPage></StudentAssigntmentViewPage>
 				},
 			]
 		}

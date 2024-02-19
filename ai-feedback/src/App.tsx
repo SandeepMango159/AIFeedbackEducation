@@ -19,6 +19,8 @@ import AdmindashboardPage from "./pages/Admin/AdmindashboardPage";
 import AdminAssignmentsViewPage from "./pages/Admin/AdminAssignmentsViewPage";
 import AdminAIToolsPage from "./pages/Admin/AdminAIToolsPage";
 import AdminAnalyticsPage from "./pages/Admin/AdminAnalyticsPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -70,14 +72,6 @@ const router = createBrowserRouter(
 					element: <StudentAnalyticsPage></StudentAnalyticsPage>
 				},
 				{
-					path: "/help",
-					element: <HelpPage></HelpPage>				
-				},
-				{
-					path: "/settings",
-					element: <SettingsPage></SettingsPage>
-				},
-				{
 					path: "/admindashboard",
 					element: <AdmindashboardPage></AdmindashboardPage>
 				},
@@ -93,6 +87,24 @@ const router = createBrowserRouter(
 					path: "/admindashboard/analytics",
 					element: <AdminAnalyticsPage></AdminAnalyticsPage>
 				},
+				{
+					path: "/help",
+					element: <HelpPage></HelpPage>				
+				},
+				{
+					path: "/settings",
+					element: <SettingsPage></SettingsPage>
+				},
+				{
+					path: "/login",
+					element: <LoginPage></LoginPage>
+				},
+				{
+					path: "/register",
+					element: <RegisterPage></RegisterPage>
+				},
+
+		
 			]
 		}
 	],

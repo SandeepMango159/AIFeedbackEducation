@@ -15,6 +15,9 @@ import StudentAssigntmentViewPage from "./pages/Student/StudentAssigntmentViewPa
 import StudentAnalyticsPage from "./pages/Student/StudentAnalyticsPage";
 import HelpPage from "./pages/HelpPage";
 import SettingsPage from "./pages/Settings";
+import AdmindashboardPage from "./pages/Admin/AdmindashboardPage";
+import AdminAssignmentsViewPage from "./pages/Admin/AdminAssignmentsViewPage";
+import AdminAIToolsPage from "./pages/Admin/AdminAIToolsPage";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -72,6 +75,18 @@ const router = createBrowserRouter(
 				{
 					path: "/settings",
 					element: <SettingsPage></SettingsPage>
+				},
+				{
+					path: "/admindashboard",
+					element: <AdmindashboardPage></AdmindashboardPage>
+				},
+				{
+					path: "/admindashboard/assignments-view",
+					element: <AdminAssignmentsViewPage></AdminAssignmentsViewPage>
+				},
+				{
+					path: "/admindashboard/ai-tools",
+					element: <AdminAIToolsPage></AdminAIToolsPage>
 				},
 			]
 		}

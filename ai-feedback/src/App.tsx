@@ -14,6 +14,7 @@ import TeacherAnalyticsPage from "./pages/Teacher/TeacherAnalyticsPage";
 import StudentAssigntmentViewPage from "./pages/Student/StudentAssigntmentViewPage";
 import StudentAnalyticsPage from "./pages/Student/StudentAnalyticsPage";
 import HelpPage from "./pages/HelpPage";
+import SettingsPage from "./pages/Settings";
 
 // zet hier routes ff in
 const router = createBrowserRouter(
@@ -66,7 +67,12 @@ const router = createBrowserRouter(
 				},
 				{
 					path: "/help",
-					element: <HelpPage></HelpPage>				},
+					element: <HelpPage></HelpPage>				
+				},
+				{
+					path: "/settings",
+					element: <SettingsPage></SettingsPage>
+				},
 			]
 		}
 	],
